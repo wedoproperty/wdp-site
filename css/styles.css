@@ -1,27 +1,46 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
+    line-height: 1.6;
 }
 .bg-primary {
-    background-color: #87CEEB !important;
+    background-color: #5DADE2 !important; /* Deeper sea blue */
 }
-.btn-primary {
-    background-color: #FFA07A;
+.btn-accent {
+    background-color: #FFA07A; /* Warm salmon */
     border-color: #FFA07A;
 }
-.btn-primary:hover {
+.btn-accent:hover {
     background-color: #FF8C66;
 }
-.btn-secondary {
-    background-color: #FFD700;
-    border-color: #FFD700;
-    color: #333;
+.btn-gold {
+    background-color: #D4AF37; /* Luxury gold */
+    border-color: #D4AF37;
+    color: white;
 }
-.btn-secondary:hover {
-    background-color: #FFC107;
+.btn-gold:hover {
+    background-color: #B9932E;
 }
-h1, h2 {
-    color: #4A90E2;
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.navbar-nav .nav-link {
+    color: white !important;
+    margin: 0 15px;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: #D4AF37 !important; /* Gold hover */
+}
+.hero {
+    background-size: cover;
+    background-position: center;
+}
+h1, h2, h3 {
+    color: #5DADE2; /* Blue for headings */
 }
 footer {
     background-color: #333;

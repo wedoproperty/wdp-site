@@ -1,75 +1,84 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
-
-\f0\fs26\fsmilli13333 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <meta name="description" content="Book Your Stay with We Do Property in Cape Town">\
-    <meta name="keywords" content="Cape Town, Short-Term Rentals, Book Online, Luxury Vacation Rentals">\
-    <title>Book Online | We Do Property</title>\
-    <link rel="stylesheet" href="styles.css">\
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">\
-</head>\
-<body>\
-    <header>\
-        <nav>\
-            <div class="logo">We Do Property</div>\
-            <ul>\
-                <li><a href="index.html">Home</a></li>\
-                <li><a href="about.html">About Us</a></li>\
-                <li><a href="gallery.html">Gallery</a></li>\
-                <li><a href="services.html">Our Services</a></li>\
-                <li><a href="book.html">Book Online</a></li>\
-                <li><a href="agents.html">Estate Agents</a></li>\
-                <li><a href="contact.html">Contact</a></li>\
-            </ul>\
-        </nav>\
-    </header>\
-\
-    <section id="book">\
-        <h2>Book Your Stay</h2>\
-        <p>Reserve your luxury rental in Cape Town. We\'92ll confirm availability and send a payment link.</p>\
-        <form name="booking" method="POST" data-netlify="true">\
-            <input type="hidden" name="form-name" value="booking">\
-            <input type="text" name="name" placeholder="Your Name" required>\
-            <input type="email" name="email" placeholder="Your Email" required>\
-            <input type="text" name="check-in" placeholder="Check-In Date" id="check-in" required>\
-            <input type="text" name="check-out" placeholder="Check-Out Date" id="check-out" required>\
-            <select name="property" required>\
-                <option value="" disabled selected>Select a Property</option>\
-                <option value="Sea Point Villa">Sea Point Villa</option>\
-                <option value="Blouberg Apartment">Blouberg Apartment</option>\
-                <!-- Add 9 more property options via Netlify CMS -->\
-            </select>\
-            <textarea name="message" placeholder="Additional Requests (e.g., number of guests)"></textarea>\
-            <button type="submit" class="btn">Submit Booking Request</button>\
-        </form>\
-        <p>After submission, we\'92ll send a payment link via Stripe or PayPal to <strong>book@wedoproperty.co.za</strong>.</p>\
-        <div class="hostaway-placeholder">\
-            <p>Real-time booking coming soon via Hostaway. Contact us for availability.</p>\
-        </div>\
-    </section>\
-\
-    <footer>\
-        <p>\'a9 2025 We Do Property. All rights reserved.</p>\
-        <div class="social-links">\
-            <a href="#" target="_blank">Facebook</a>\
-            <a href="#" target="_blank">Instagram</a>\
-            <a href="#" target="_blank">Twitter</a>\
-        </div>\
-        <p>WhatsApp: <a href="https://wa.me/+27815725069">+27 81 572 5069</a> | Email: <a href="mailto:info@wedoproperty.co.za">info@wedoproperty.co.za</a></p>\
-    </footer>\
-\
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>\
-    <script src="script.js"></script>\
-</body>\
-</html>\
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Online - We Do Property</title>
+    <meta name="description" content="Book your luxury rental in Cape Town with real-time availability.">
+    <meta name="keywords" content="Cape Town, Short Term Rentals, Book Online, Sea Point, Century City, Blouberg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <img src="images/logo.png" alt="We Do Property Logo" width="150">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Our Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="book.html">Book Online</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estate-agents.html">Estate Agents</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <h1>Book Your Stay</h1>
+        <form id="bookingForm" action="https://formspree.io/f/your-formspree-id" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="listing" class="form-label">Select Property</label>
+                <select class="form-select" id="listing" name="listing">
+                    <option>Listing 1 - Sea Point</option>
+                    <option>Listing 2 - Century City</option>
+                    <!-- Add your 11 listings -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="dates" class="form-label">Check-in to Check-out</label>
+                <input type="text" class="form-control" id="dates" name="dates" placeholder="Select dates" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Book via Email</button>
+        </form>
+        <p class="mt-3">Or email <a href="mailto:book@wedoproperty.co.za">book@wedoproperty.co.za</a>.</p>
+        <h3>Pay Now</h3>
+        <button id="stripeButton" class="btn btn-secondary">Pay with Stripe</button>
+        <!-- Add PayPal button after signup -->
+        <!-- Hostaway Widget -->
+        <div id="hostaway-widget"></div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>WhatsApp: +27 81 572 5069 | Email: <a href="mailto:info@wedoproperty.co.za" class="text-white">info@wedoproperty.co.za</a></p>
+        <p>Social: <a href="#" class="text-white">Facebook</a> | <a href="#" class="text-white">Instagram</a> | <a href="#" class="text-white">Twitter</a></p>
+        <p>© 2025 We Do Property</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        flatpickr("#dates", { mode: "range", minDate: "today" });
+        const stripe = Stripe('pk_test_your_stripe_public_key'); // Replace key
+        document.getElementById('stripeButton').addEventListener('click', () => {
+            alert('Stripe setup needed');
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

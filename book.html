@@ -12,14 +12,14 @@
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
-        <img src="images/logo.png" alt="We Do Property Logo" width="150">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="We Do Property Logo" width="150"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
@@ -32,38 +32,51 @@
             </div>
         </nav>
     </header>
-    <main class="container my-5">
-        <h1>Book Your Stay</h1>
-        <form id="bookingForm" action="https://formspree.io/f/your-formspree-id" method="POST">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+    <section class="hero text-center text-white py-5" style="background-color: #5DADE2;">
+        <div class="container">
+            <h1 class="display-1">Book Your Stay</h1>
+            <p class="lead">Secure a luxury rental in Cape Town with ease and real-time availability.</p>
+        </div>
+    </section>
+    <section class="booking py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Book Online</h2>
+            <form id="bookingForm" action="https://formspree.io/f/your-formspree-id" method="POST" class="mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="listing" class="form-label">Select Listing</label>
+                    <select class="form-select" id="listing" name="listing">
+                        <option>Listing 1 - Sea Point</option>
+                        <option>Listing 2 - Century City</option>
+                        <!-- Add options for all 11 listings -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dates" class="form-label">Check-in to Check-out</label>
+                    <input type="text" class="form-control" id="dates" name="dates" placeholder="Select dates" required>
+                </div>
+                <button type="submit" class="btn btn-gold btn-lg w-100">Submit Booking</button>
+            </form>
+            <div id="hostaway-widget" class="mt-4 text-center"></div> <!-- Hostaway widget for real-time availability -->
+            <h3 class="text-center mt-5">Payment Options</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <button id="stripeButton" class="btn btn-accent btn-lg w-100 mb-3">Pay with Stripe</button>
+                </div>
+                <div class="col-md-6">
+                    <div id="paypal-button-container"></div> <!-- PayPal button placeholder -->
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="listing" class="form-label">Select Property</label>
-                <select class="form-select" id="listing" name="listing">
-                    <option>Listing 1 - Sea Point</option>
-                    <option>Listing 2 - Century City</option>
-                    <!-- Add your 11 listings -->
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="dates" class="form-label">Check-in to Check-out</label>
-                <input type="text" class="form-control" id="dates" name="dates" placeholder="Select dates" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Book via Email</button>
-        </form>
-        <p class="mt-3">Or email <a href="mailto:book@wedoproperty.co.za">book@wedoproperty.co.za</a>.</p>
-        <h3>Pay Now</h3>
-        <button id="stripeButton" class="btn btn-secondary">Pay with Stripe</button>
-        <!-- Add PayPal button after signup -->
-        <!-- Hostaway Widget -->
-        <div id="hostaway-widget"></div>
-    </main>
+            <p class="text-center mt-4">Or email book@wedoproperty.co.za for custom bookings.</p>
+        </div>
+    </section>
     <footer class="bg-dark text-white text-center py-3">
         <p>WhatsApp: +27 81 572 5069 | Email: <a href="mailto:info@wedoproperty.co.za" class="text-white">info@wedoproperty.co.za</a></p>
         <p>Social: <a href="#" class="text-white">Facebook</a> | <a href="#" class="text-white">Instagram</a> | <a href="#" class="text-white">Twitter</a></p>
@@ -74,9 +87,9 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script>
         flatpickr("#dates", { mode: "range", minDate: "today" });
-        const stripe = Stripe('pk_test_your_stripe_public_key'); // Replace key
+        const stripe = Stripe('pk_test_your_stripe_public_key'); // Replace with your key
         document.getElementById('stripeButton').addEventListener('click', () => {
-            alert('Stripe setup needed');
+            alert('Redirecting to Stripe - set up your account first.');
         });
     </script>
     <script src="js/script.js"></script>
